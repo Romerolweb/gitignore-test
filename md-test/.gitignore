@@ -1,0 +1,34 @@
+# Ignore all markdown files by default
+*.md
+
+# Negate specific markdown files
+foo-excl.md
+!foo*.md
+
+# Ignore node_modules directory
+node_modules/
+
+# Logs directory patterns
+md-log/*.md
+!/md-log/foo.md
+
+# Nested directory patterns
+**/logdir/log
+**/foodir/bar
+exclude/**
+
+# Exceptions
+!findthis*
+
+# Hide directories recursively
+**/hide/**
+subdir/subdir2/
+
+# Root-relative patterns
+/rootsubdir/
+
+# Directory patterns
+dirpattern/
+
+# README
+README.md

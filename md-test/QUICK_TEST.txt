@@ -1,0 +1,40 @@
+════════════════════════════════════════════════════════════════════════════
+QUICK TEST REFERENCE
+════════════════════════════════════════════════════════════════════════════
+
+To validate your markdown gitignore implementation:
+
+EXPECTED RESULTS: 16 files total
+- All files should be marked "foo: OK"
+- Zero files marked "foo: FAIL" should appear
+
+QUICK COMMANDS:
+
+Count expected results (should be 16):
+  find . -type f -name '*.md' -exec grep -l 'foo: OK' {} \; | wc -l
+
+Count excluded files (should be 59):
+  find . -type f -name '*.md' -exec grep -l 'foo: FAIL' {} \; | wc -l
+
+Expected files (16 total):
+  Documentation/foo.md
+  Documentation/foo-excl.md
+  Documentation/foo-excluded.md
+  Documentation/foo-main.md
+  Documentation/foo-test.md
+  Documentation/foo-guide.md
+  htmldoc/foo-docs.md
+  md-log/foo.md
+  md-log/foo-error.md
+  md-log/foo-warnings.md
+  src/findthis.md
+  src/findthis-alt.md
+  src/findthis-backup.md
+  src/findthis-main.md
+  src/findthis-utils.md
+  subdir/rootsubdir/foo.md
+
+Verify with git reference:
+  git check-ignore -v $(find . -type f -name '*.md')
+
+════════════════════════════════════════════════════════════════════════════
