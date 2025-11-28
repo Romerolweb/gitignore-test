@@ -20,6 +20,27 @@ $ git add .
 $ git commit -m "preparing test"
 ```
 
+## Markdown Test Suite
+
+A dedicated test suite for gitignore implementations supporting markdown (`.md`) files is available in the [`md-test/`](md-test/) directory.
+
+### Purpose
+
+The `md-test` suite provides:
+- **75 markdown files** (16 to include, 59 to exclude)
+- **15 gitignore rules** covering various pattern types
+- **Reference data** for validating markdown-aware gitignore tools
+
+### Quick Start
+
+```bash
+$ cd md-test
+$ find . -type f -name '*.md' -exec grep -l 'foo: OK' {} \; | wc -l  # Should be 16
+```
+
+See [`md-test/QUICK_TEST.txt`](md-test/QUICK_TEST.txt) for detailed testing instructions.
+
+
 
 ### Test
 
